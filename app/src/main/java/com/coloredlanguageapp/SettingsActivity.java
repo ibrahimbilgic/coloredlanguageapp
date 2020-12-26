@@ -72,7 +72,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 new AlertDialog.Builder(SettingsActivity.this,R.style.Theme_AppCompat_Light_Dialog)
                         .setTitle("Çıkış Yap")
-                        .setMessage("Çıkış yapmak istiyor musun")
+                        .setMessage("Çıkış yapmak istiyor musun?")
                         .setPositiveButton("Çık", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -85,7 +85,6 @@ public class SettingsActivity extends AppCompatActivity {
                                 finish();
                             }
                         }).setNegativeButton("İptal",null)
-                        .setIcon(android.R.drawable.ic_dialog_alert)
                         .show();
             }
         });

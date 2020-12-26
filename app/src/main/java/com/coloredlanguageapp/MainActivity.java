@@ -22,6 +22,9 @@ import android.widget.Toast;
 
 import com.muddzdev.styleabletoast.StyleableToast;
 
+import static com.coloredlanguageapp.CardActivity.cardActTrue;
+
+
 // 22.11.20
 
 public class MainActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener{
@@ -75,6 +78,10 @@ public class MainActivity extends AppCompatActivity implements ConnectivityRecei
                     if(checkInternetConnection()){
                         Intent signIntent = new Intent(MainActivity.this,SignInActivity.class);
                         startActivity(signIntent);
+                        if(cardActTrue){
+                            finish();
+                        }
+
                     }
 
                 }
@@ -87,8 +94,10 @@ public class MainActivity extends AppCompatActivity implements ConnectivityRecei
                     if(checkInternetConnection()){
                         Intent signUpIntent = new Intent(MainActivity.this,SignUpActivity.class);
                         startActivity(signUpIntent);
+                        if(cardActTrue){
+                            finish();
+                        }
                     }
-
                 }
             });
         }

@@ -178,5 +178,6 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
                 .setValue(yeniUser);
 
     }
+
 }
 

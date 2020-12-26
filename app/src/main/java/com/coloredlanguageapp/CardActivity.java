@@ -21,11 +21,14 @@ public class CardActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private Button settings;
     private BottomNavigationView bottomNavigationView;
+    public static boolean cardActTrue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card);
+
+        cardActTrue = true;
 
         hello = findViewById(R.id.hello);
         settings = findViewById(R.id.settings);

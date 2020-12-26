@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="Ana sayfa"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/practice"
+        android:title="Uygula"
+        android:icon="@drawable/ic_whatshot"/>
+    <item
+        android:id="@+id/collection"
+        android:title="Koleksiyon"
+        android:icon="@drawable/ic_style"/>
+</menu>

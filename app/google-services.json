@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "924794443802",
+    "firebase_url": "https://colored-language-app.firebaseio.com",
+    "project_id": "colored-language-app",
+    "storage_bucket": "colored-language-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:924794443802:android:fa82b57c7b12a25ba699a3",
+        "android_client_info": {
+          "package_name": "com.coloredlanguageapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "924794443802-bkhjj9tudstspennr87coc46g3afn0mr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpkZkuLD98GeczjAsJFWkiNRdM3pqXA-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "924794443802-bkhjj9tudstspennr87coc46g3afn0mr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "924794443802-k9l1612bl1beig7pqefjthiccbenmncv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ColoredLanguageApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="exampleToast">
+        <item name="stColorBackground">#ff0000</item>
+        <item name="stTextColor">#000</item>
+        <item name="stSolidBackground">@drawable/ic_baseline</item>
+        <item name="stStrokeColor">#000</item>
+        <item name="stStrokeWidth">2dp</item>
+        <item name="stLength">LONG</item>
+        <item name="stRadius">2dp</item>
+    </style>
+
+</resources>

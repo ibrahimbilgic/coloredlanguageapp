@@ -28,6 +28,7 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 public class SignUpActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener{
     private EditText userName,email,password;
     private Button signUp;
@@ -120,9 +121,9 @@ public class SignUpActivity extends AppCompatActivity implements ConnectivityRec
                             saveUser();
                             PreferenceUtils.saveEmail(email,SignUpActivity.this);
                             PreferenceUtils.saveName(userName,SignUpActivity.this);
-                            Intent card = new Intent(SignUpActivity.this,CardActivity.class);
-                            startActivity(card);
-                            finish();
+                            Intent MainIntent = new Intent(SignUpActivity.this,MainActivity.class);
+                            MainIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(MainIntent);
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {

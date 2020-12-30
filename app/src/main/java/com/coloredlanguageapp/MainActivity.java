@@ -1,150 +1,67 @@
 package com.coloredlanguageapp;
 
-import androidx.annotation.RequiresApi;
+//27. 12 . 20
+// Created by 5 March Lovers..
+// for potuk's eternal soul...
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.fragment.app.Fragment;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.muddzdev.styleabletoast.StyleableToast;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
-import static com.coloredlanguageapp.CardActivity.cardActTrue;
+
+public class MainActivity extends AppCompatActivity {
+
+    private BottomNavigationView bottomNavigationView;
+    public static boolean isMainAct;
 
 
-// 22.11.20
-
-public class MainActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener{
-    private Button signIn;
-    private Button signUp;
-    private TextView textView;
-
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       checkInternetConnection();
 
-        if(PreferenceUtils.getEmail(this)!=null && PreferenceUtils.getEmail(this)!=""){
-            Intent CardIntent = new Intent(MainActivity.this,CardActivity.class);
-            startActivity(CardIntent);
-            finish();
+        // BottomNav
+        bottomNavigationView = findViewById(R.id.bottom_nav);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(bottomNavMethod);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
+    }
+
+    // Switch in fragments...
+    private BottomNavigationView.OnNavigationItemSelectedListener bottomNavMethod = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragment = null;
+            switch (item.getItemId()){
+                case R.id.home:
+                    fragment = new HomeFragment();
+                    break;
+
+                case R.id.practice:
+                    fragment = new PracticeFragment();
+                    break;
+                case R.id.collection:
+                    fragment = new CollectionFragment();
+                    break;
+            }
+            getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment).commit();
+            return true;
         }
-        else{
-            signIn = findViewById(R.id.signIn);
-            signUp = findViewById(R.id.signUp);
-            textView = findViewById(R.id.textView);
-
-            int unicode = 0x1F44B;
-            String emoji = getEmoji(unicode);
-
-            textView.setText("Hoş geldin "+emoji);
-
-            textView.setTranslationY(100);
-            signIn.setTranslationY(50);
-            signUp.setTranslationY(40);
-
-            int v = 0;
-            signIn.setAlpha(v);
-            signUp.setAlpha(v);
-
-            signUp.setVisibility(View.VISIBLE);
-            signIn.setVisibility(View.VISIBLE);
-
-            textView.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(200).start();
-            signUp.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(1000).start();
-            signIn.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(2000).start();
-
-            signIn.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-                    signIn.setEnabled(true);
-                    if(checkInternetConnection()){
-                        Intent signIntent = new Intent(MainActivity.this,SignInActivity.class);
-                        startActivity(signIntent);
-                        if(cardActTrue){
-                            finish();
-                        }
-
-                    }
-
-                }
-            });
-
-            signUp.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    signUp.setEnabled(true);
-                    if(checkInternetConnection()){
-                        Intent signUpIntent = new Intent(MainActivity.this,SignUpActivity.class);
-                        startActivity(signUpIntent);
-                        if(cardActTrue){
-                            finish();
-                        }
-                    }
-                }
-            });
-        }
-    }
-
-    private boolean checkInternetConnection() {
-        boolean isConnected = ConnectivityReceiver.isConnected();
-        if(!isConnected){
-            changeActivity();
-        }
-        return isConnected;
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        //register intent filter
-        final IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-
-        ConnectivityReceiver connectivityReceiver = new ConnectivityReceiver();
-        registerReceiver(connectivityReceiver,intentFilter);
-
-        MyApp.getInstance().setConnectivityListener(this);
-    }
-
-
-    //Add an Emoji func.
-    public String getEmoji(int unicode){
-        return new String(Character.toChars(unicode));
-
-    }
-
-    @Override
-    public void onNetworkConnectionChanged(boolean isConnected) {
-        if(!isConnected){
-            changeActivity();
-            signIn.setEnabled(false);
-            signUp.setEnabled(false);
-        }
-        else{
-            signIn.setEnabled(true);
-            signUp.setEnabled(true);
-        }
-    }
-
-    private void changeActivity() {
-        Toast.makeText(this, "İnternet bağlantını kontrol et!", Toast.LENGTH_SHORT).show();
-    }
+    };
 }

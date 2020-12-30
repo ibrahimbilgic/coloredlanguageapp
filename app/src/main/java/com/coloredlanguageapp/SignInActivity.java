@@ -32,6 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
+
 public class SignInActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener{
     private EditText email,password;
     private TextView forgotPassword;
@@ -171,9 +172,9 @@ public class SignInActivity extends AppCompatActivity implements ConnectivityRec
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String name = snapshot.child("name").getValue().toString();
                         PreferenceUtils.saveName(name,SignInActivity.this);
-                        Intent cardInt = new Intent(SignInActivity.this,CardActivity.class);
-                        startActivity(cardInt);
-                        finish();
+                        Intent MainInt = new Intent(SignInActivity.this,MainActivity.class);
+                        MainInt.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(MainInt);
                     }
 
                     @Override

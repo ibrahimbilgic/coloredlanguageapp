@@ -4,7 +4,7 @@
     <item
         android:id="@+id/home"
         android:title="Ana sayfa"
-        android:icon="@drawable/ic_home"/>
+        android:icon="@drawable/ic_home" />
     <item
         android:id="@+id/practice"
         android:title="Uygula"

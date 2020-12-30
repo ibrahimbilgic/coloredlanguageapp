@@ -55,11 +55,9 @@ public class BasicActivity extends AppCompatActivity {
         swipeCardsView.retainLastCard(false);
         swipeCardsView.enableSwipe(true);
 
-
         winnerWord();
 
     }
-
 
     private List<ItemModel> addList(String emoji,String english, String turkish, String mean) {
         List<ItemModel> items = new ArrayList<>();
@@ -116,6 +114,7 @@ public class BasicActivity extends AppCompatActivity {
 
                     @Override
                     public void onCardVanish(int index, SwipeCardsView.SlideType type) {
+                        swipeCardsView.startAnimation(AnimationUtils.loadAnimation(BasicActivity.this,R.anim.scale));
                         winnerWord();
                     }
 
@@ -127,8 +126,6 @@ public class BasicActivity extends AppCompatActivity {
 
                 BaseCardAdapter cardAdapter = new BaseCardAdapter(addList(htmlCode3,htmlCode,htmlCode2,htmlCode4),BasicActivity.this);
                 swipeCardsView.setAdapter(cardAdapter);
-
-
 
             }
 

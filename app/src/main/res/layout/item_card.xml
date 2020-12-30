@@ -8,7 +8,7 @@
     android:layout_margin="10dp"
     android:layout_marginTop="100dp"
     android:layout_gravity="center"
-    android:backgroundTint="#F3F3F3"
+    android:backgroundTint="#ffffff"
     app:cardCornerRadius="12dp"
     app:cardElevation="5dp"
     android:orientation="vertical">

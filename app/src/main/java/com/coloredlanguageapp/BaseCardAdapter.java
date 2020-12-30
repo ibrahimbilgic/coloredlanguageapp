@@ -5,6 +5,7 @@ import android.graphics.ColorSpace;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.ScaleAnimation;
 
 import org.sufficientlysecure.htmltextview.HtmlTextView;
 
@@ -17,7 +18,7 @@ public class BaseCardAdapter extends com.huxq17.swipecardsview.BaseCardAdapter {
 
     public BaseCardAdapter(List<ItemModel> items, Context context) {
 
-        animaScale = AnimationUtils.loadAnimation(context,R.anim.scale);
+        //animaScale = AnimationUtils.loadAnimation(context,R.anim.scale);
         this.items = items;
         this.context = context;
     }
@@ -35,7 +36,7 @@ public class BaseCardAdapter extends com.huxq17.swipecardsview.BaseCardAdapter {
     @Override
     public void onBindData(int position, View cardview) {
 
-        cardview.startAnimation(animaScale);
+        //cardview.startAnimation(animaScale);
 
         if(items == null || items.size() == 0){
             return;
@@ -47,16 +48,12 @@ public class BaseCardAdapter extends com.huxq17.swipecardsview.BaseCardAdapter {
         turkish= cardview.findViewById(R.id.item_turkish);
         mean= cardview.findViewById(R.id.item_mean);
 
-
         ItemModel model = items.get(position);
-
-
 
         emoji.setHtml(model.getEmoji());
         mean.setHtml(model.getMean());
         english.setHtml(model.getEnglish());
         turkish.setHtml(model.getTurkish());
-
 
     }
 }

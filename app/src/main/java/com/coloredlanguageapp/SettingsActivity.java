@@ -4,11 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -21,6 +18,7 @@ public class SettingsActivity extends AppCompatActivity {
     private TextView logout;
     private FirebaseAuth firebaseAuth;
     private Switch aSwitch,bSwitch;
+    public static boolean isLogoutTrue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,15 +78,16 @@ public class SettingsActivity extends AppCompatActivity {
                                 PreferenceUtils.saveEmail(empty,SettingsActivity.this);
                                 PreferenceUtils.saveName(empty,SettingsActivity.this);
                                 firebaseAuth.getInstance().signOut();
-                                Intent logoutIntent = new Intent(SettingsActivity.this,MainActivity.class);
+                                Intent logoutIntent = new Intent(SettingsActivity.this, SplashActivity.class);
+                                logoutIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(logoutIntent);
-                                finish();
                             }
                         }).setNegativeButton("İptal",null)
                         .show();
             }
         });
     }
+
 
     public void checkNightModeActivated(){
         if(PreferenceUtils.isNightModeSystemCheck(SettingsActivity.this)){

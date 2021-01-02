@@ -68,7 +68,7 @@ public class SettingsActivity extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(SettingsActivity.this,R.style.Theme_AppCompat_Light_Dialog)
+                new androidx.appcompat.app.AlertDialog.Builder(SettingsActivity.this,R.style.AlertDialogTheme)
                         .setTitle("Çıkış Yap")
                         .setMessage("Çıkış yapmak istiyor musun?")
                         .setPositiveButton("Çık", new DialogInterface.OnClickListener() {

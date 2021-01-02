@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SignUpActivity">
+    tools:context=".SignUpActivity"
+    android:background="@color/colorPrimaryDayNight">
 
     <EditText
         android:id="@+id/userName"
@@ -14,6 +15,7 @@
         android:layout_marginTop="300dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/button_shape"
+        android:backgroundTint="@color/editTextColor"
         android:ems="10"
         android:hint="Sana nasıl hitap edelim?"
         android:inputType="textPersonName"
@@ -30,6 +32,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/button_shape"
+        android:backgroundTint="@color/editTextColor"
         android:elevation="1dp"
         android:ems="10"
         android:hint="Email"
@@ -39,14 +42,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userName" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@drawable/button_shape"
+        android:backgroundTint="@color/buttonColor"
         android:fontFamily="@font/helveticaneuelig"
         android:text="Kaydol"
+        android:textColor="@color/White"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextInputLayout" />
@@ -59,17 +64,21 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/button_shape"
+        android:backgroundTint="@color/editTextColor"
         android:padding="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email"
-        app:passwordToggleEnabled="true">
+        app:passwordToggleEnabled="true"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_shape"
+            android:backgroundTint="@color/editTextColor"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword" />

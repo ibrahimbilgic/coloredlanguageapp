@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsActivity">
+    tools:context=".SettingsActivity"
+    android:background="@color/colorPrimaryDayNight">
 
     <TextView
         android:id="@+id/settingsText"
@@ -13,6 +14,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:text="Ayarlar"
+        android:textColor="@color/titleDayNight"
         android:fontFamily="@font/helveticaneuelig"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -27,7 +29,9 @@
         android:layout_marginTop="40dp"
         android:fontFamily="@font/helveticaneuelig"
         android:text="Gece Modu"
+        android:textColor="@color/titleDayNight"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settingsText" />
 
@@ -60,6 +64,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="56dp"
         android:text="Cihaz Ayarlarını Kullan"
+        android:textColor="@color/titleDayNight"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nightModeText" />

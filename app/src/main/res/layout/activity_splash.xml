@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashActivity">
+    tools:context=".SplashActivity"
+    android:background="@color/colorPrimaryDayNight">
 
     <TextView
         android:id="@+id/textView"
@@ -13,13 +14,13 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="48dp"
         android:text="Hoş Geldiniz"
-        android:textColor="@color/black"
+        android:textColor="@color/titleDayNight"
         android:textSize="36sp"
         android:fontFamily="@font/helveticaneuelig"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signUp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -30,10 +31,11 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/signIn"
         app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="#8EA6BC"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:backgroundTint="@color/buttonColor"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signIn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -45,7 +47,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-         />
+        android:textColor="@color/white"
+        android:backgroundTint="@color/buttonColor"/>
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/btn_signInGoogle"

@@ -58,7 +58,8 @@ public class SplashActivity extends AppCompatActivity implements ConnectivityRec
             signIn = findViewById(R.id.signIn);
             signUp = findViewById(R.id.signUp);
             textView = findViewById(R.id.textView);
-            signInButton = findViewById(R.id.btn_signInGoogle);
+            signInButton = findViewById(R.id.btn_signInGoogle); // sign in with google button
+
 
             int unicode = 0x1F44B;
             String emoji = getEmoji(unicode);
@@ -82,8 +83,11 @@ public class SplashActivity extends AppCompatActivity implements ConnectivityRec
             textView.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(200).start();
             signUp.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(1000).start();
             signIn.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(2000).start();
+
             signInButton.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(2500).start();
 
+            /*
+            /// Sign in With Google
             GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(
                     GoogleSignInOptions.DEFAULT_SIGN_IN)
                     .requestEmail()
@@ -105,7 +109,7 @@ public class SplashActivity extends AppCompatActivity implements ConnectivityRec
             if(firebaseUser != null){
                 startActivity(new Intent(SplashActivity.this,MainActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-            }
+            }*/
 
 
             signIn.setOnClickListener(new View.OnClickListener() {
@@ -179,6 +183,8 @@ public class SplashActivity extends AppCompatActivity implements ConnectivityRec
         Toast.makeText(this, "İnternet bağlantını kontrol et!", Toast.LENGTH_SHORT).show();
     }
 
+    ///// GoogleSignIn
+    /*
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -218,5 +224,5 @@ public class SplashActivity extends AppCompatActivity implements ConnectivityRec
                 }
             }
         }
-    }
+    }*/
 }

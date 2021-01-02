@@ -18,11 +18,13 @@
             app:cardElevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/hello">
+            app:layout_constraintTop_toBottomOf="@+id/hello"
+            android:backgroundTint="@color/white">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="BASIC"
+                android:textColor="@color/black"
                 android:id="@+id/BasicAct"
                 android:textSize="24sp"/>
         </androidx.cardview.widget.CardView>
@@ -38,17 +40,19 @@
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@color/titleDayNight"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/settings"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/ic_baseline_settings_24"
+            android:background="@drawable/ic_settings"
+            android:backgroundTint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

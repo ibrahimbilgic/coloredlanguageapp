@@ -12,13 +12,11 @@
     <color name="colorPrimaryDarkNight">#141d26</color>
     <color name="colorAccentNight">#ffffff</color>
 
-    <color name="colorPrimaryDayNight">#FFFFFFFF</color>
     <color name="primaryTitleColor">#212121</color>
+    <color name="colorPrimaryDayNight">#16202c</color>
     <color name="buttonColor">#FFBB86FC</color>
-    <color name="titleDayNight">#FF000000</color>
+    <color name="titleDayNight">#FFFFFFFF</color>
     <color name="editTextColor">#BACAD8</color>
-    <color name="forgotPassword">#FF000000</color>
-
-
+    <color name="forgotPassword">#FFFFFFFF</color>
 
 </resources>

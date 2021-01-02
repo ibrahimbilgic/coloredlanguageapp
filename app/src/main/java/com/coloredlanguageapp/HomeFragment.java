@@ -1,6 +1,7 @@
 package com.coloredlanguageapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatDelegate;
@@ -86,6 +87,7 @@ public class HomeFragment extends Fragment {
         hello = v.findViewById(R.id.hello);
         settings = v.findViewById(R.id.settings);
         basicAct = v.findViewById(R.id.BasicAct);
+
 
         basicAct.setOnClickListener(new View.OnClickListener() {
             @Override

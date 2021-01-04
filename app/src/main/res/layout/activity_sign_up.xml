@@ -14,15 +14,19 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="300dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/button_shape"
-        android:backgroundTint="@color/editTextColor"
+        android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="Sana nasıl hitap edelim?"
         android:inputType="textPersonName"
         android:padding="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:drawableStart="@drawable/ic_person"
+        android:drawableTint="@color/drawableiconTint"
+        android:drawablePadding="10dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"/>
 
     <EditText
         android:id="@+id/email"
@@ -31,8 +35,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/button_shape"
-        android:backgroundTint="@color/editTextColor"
+        android:background="@drawable/custom_input"
         android:elevation="1dp"
         android:ems="10"
         android:hint="Email"
@@ -40,7 +43,12 @@
         android:padding="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userName" />
+        app:layout_constraintTop_toBottomOf="@+id/userName"
+        android:drawableStart="@drawable/custom_email_icon"
+        android:drawableTint="@color/drawableiconTint"
+        android:drawablePadding="10dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signup"
@@ -64,7 +72,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/button_shape"
-        android:backgroundTint="@color/editTextColor"
+        android:backgroundTint="@color/colorPrimaryDayNight"
         android:padding="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,11 +85,15 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_shape"
-            android:backgroundTint="@color/editTextColor"
+            android:background="@drawable/custom_input"
             android:ems="10"
             android:hint="Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawableTint="@color/drawableiconTint"
+            android:drawablePadding="12dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

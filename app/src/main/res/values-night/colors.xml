@@ -19,4 +19,14 @@
     <color name="editTextColor">#BACAD8</color>
     <color name="forgotPassword">#FFFFFFFF</color>
 
+    <color name="strokeColor">#FFFFFFFF</color>
+    <color name="strokeColorfocused">#1da1f2</color>
+    <color name="settingsColor">#FFFFFFFF</color>
+
+    <color name="selectorSelectedColor">#1da1f2</color>
+    <color name="selectorNotSelectedColor">#FFFFFFFF</color>
+
+    <color name="drawableiconTint">#FFFFFFFF</color>
+
+
 </resources>
